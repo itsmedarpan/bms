@@ -1,0 +1,64 @@
+{% extends 'components/base.html' %}
+{% load static %}
+{% block extra_head %} 
+<link rel="stylesheet" href="{% static 'core/css/sliderbar.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+{% endblock %}
+{% block content %}
+
+<h2 style="text-align:center;">🩸 Upcoming Blood Donation Events Near You</h2>
+
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <!-- Slide 1 -->
+    <div class="swiper-slide">
+      <div class="event-title">Red Cross Blood Drive</div>
+      <div class="event-info">📍 Pokhara City Hospital</div>
+      <div class="event-info">📅 July 2, 2025, 9 AM — 3 PM</div>
+      <div class="event-info">❤️ Needed: A+, O−</div>
+      <a href="#" class="register-btn">Register Now</a>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="swiper-slide">
+      <div class="event-title">Lions Blood Camp</div>
+      <div class="event-info">📍 Kathmandu Medical College</div>
+      <div class="event-info">📅 July 5, 2025, 10 AM — 2 PM</div>
+      <div class="event-info">❤️ Needed: B+, AB−</div>
+      <a href="#" class="register-btn">Register Now</a>
+    </div>
+
+    <!-- Add more slides as needed -->
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+
+  <!-- Pagination Dots -->
+  <div class="swiper-pagination"></div>
+</div>
+{% block script %}
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+{% endblock %}
+<script>
+  var swiper = new Swiper(".swiper", {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  loop: true,
+  autoplay: {
+    delay: 3000, // 3 seconds between slides
+    disableOnInteraction: false, // keeps autoplay even if user clicks
+  },
+});
+</script>
+
+{% endblock %}

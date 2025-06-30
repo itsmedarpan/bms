@@ -1,0 +1,32 @@
+.swiper {
+      width: 90%;
+      height: 300px;
+      margin: 40px auto;
+    }
+    .swiper-slide {
+      background: #ffeaea;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    .event-title {
+      font-size: 22px;
+      font-weight: bold;
+      color: #b30000;
+    }
+    .event-info {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    .register-btn {
+      display: inline-block;
+      margin-top: 15px;
+      background: #e60000;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
