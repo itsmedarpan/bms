@@ -38,6 +38,21 @@
   <!-- Pagination Dots -->
   <div class="swiper-pagination"></div>
 </div>
+
+<!-- Request/Donate Section -->
+<div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-8">
+  <div class="bg-white shadow-lg rounded-lg p-8 flex-1 max-w-md text-center border-t-4 border-red-700">
+    <h3 class="text-2xl font-bold text-red-700 mb-4">Need Blood?</h3>
+    <p class="mb-6 text-gray-700">Request blood easily and get help from our community of donors.</p>
+    <a href="/requests/" class="inline-block bg-red-700 text-white px-6 py-3 rounded-md font-semibold hover:bg-red-800 transition">Request Blood</a>
+  </div>
+  <div class="bg-white shadow-lg rounded-lg p-8 flex-1 max-w-md text-center border-t-4 border-green-600">
+    <h3 class="text-2xl font-bold text-green-600 mb-4">Become a Donor</h3>
+    <p class="mb-6 text-gray-700">Save lives by donating blood. Join our network of life-savers today!</p>
+    <a href="/donors/" class="inline-block bg-green-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-green-700 transition">Donate Blood</a>
+  </div>
+</div>
+
 {% block script %}
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 {% endblock %}
