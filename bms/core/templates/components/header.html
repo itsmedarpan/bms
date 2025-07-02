@@ -1,17 +1,33 @@
-<!-- Navbar for Blood Bank Management System using Tailwind CSS -->
 <nav class="bg-red-700">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <div class="flex items-center">
         <a href="/" class="text-white font-bold text-xl">Blood Bank Management</a>
       </div>
-      <div class="hidden md:block">
-        <div class="ml-10 flex items-baseline space-x-4">
+      <div class="flex-1 hidden md:flex justify-center">
+        <div class="flex items-baseline space-x-4">
           <a href="/" class="text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-red-800">Home</a>
           <a href="{% url 'list_event' %}" class="text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-red-800">Events</a>
-          <a href="/requests/" class="text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-red-800">Requests</a>
           <a href="/about/" class="text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-red-800">About</a>
           <a href="/contact/" class="text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-red-800">Contact</a>
+        </div>
+      </div>
+      <div class="flex items-center space-x-2 mr-4">
+        <a href="{% url 'request' %}" class="bg-white text-red-700 px-4 py-2 rounded-md font-semibold hover:bg-red-100 transition text-sm">Request</a>
+      </div>
+      <div class="relative">
+        <button id="profile-menu-btn" type="button" class="flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-white" onclick="document.getElementById('profile-dropdown').classList.toggle('hidden')">
+          <span class="sr-only">Open user menu</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-8 w-8 text-white bg-red-800 rounded-full p-1">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+          </svg>
+        </button>
+        <div id="profile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+          <a href="/profile/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">My Profile</a>
+          <a href="{% url 'request' %}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">My Requests</a>
+          <a href="/profile/registrations/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">My Event Registrations</a>
+          <a href="/profile/settings/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Settings</a>
+          <a href="/logout/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Logout</a>
         </div>
       </div>
       <div class="-mr-2 flex md:hidden">
@@ -26,10 +42,38 @@
   <div class="md:hidden hidden" id="mobile-menu">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
       <a href="/" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-red-800">Home</a>
-      <a href="/donors/" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-red-800">Donors</a>
-      <a href="/requests/" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-red-800">Requests</a>
+      <a href="{% url 'list_event' %}" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-red-800">Events</a>
       <a href="/about/" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-red-800">About</a>
       <a href="/contact/" class="text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-red-800">Contact</a>
+      <a href="{% url 'request' %}" class="text-white block px-3 py-2 rounded-md text-base font-medium bg-white text-red-700 hover:bg-red-100">Request</a>
+      <button type="button" class="w-full text-left text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-red-800" onclick="document.getElementById('mobile-profile-dropdown').classList.toggle('hidden')">
+        <span class="inline-flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 mr-2 text-white bg-red-800 rounded-full p-1">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+          </svg>
+          Profile
+        </span>
+      </button>
+      <div id="mobile-profile-dropdown" class="hidden bg-white rounded-md shadow-lg py-1 mt-1">
+        <a href="/profile/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">My Profile</a>
+        <a href="{% url 'request' %}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">My Requests</a>
+        <a href="/profile/registrations/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">My Event Registrations</a>
+        <a href="/profile/settings/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Settings</a>
+        <a href="/logout/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Logout</a>
+      </div>
     </div>
   </div>
 </nav>
+<script>
+  document.addEventListener('click', function(event) {
+    var dropdown = document.getElementById('profile-dropdown');
+    var button = document.getElementById('profile-menu-btn');
+    var mobileDropdown = document.getElementById('mobile-profile-dropdown');
+    if (dropdown && !dropdown.contains(event.target) && !button.contains(event.target)) {
+      dropdown.classList.add('hidden');
+    }
+    if (mobileDropdown && !mobileDropdown.contains(event.target) && event.target.innerText !== 'Profile') {
+      mobileDropdown.classList.add('hidden');
+    }
+  });
+</script>

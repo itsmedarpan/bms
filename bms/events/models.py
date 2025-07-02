@@ -17,3 +17,5 @@ class Event(models.Model):
     class Meta:
         ordering = ['-start_date', '-start_time']
     
+class Request(models.Model):
+    pass
