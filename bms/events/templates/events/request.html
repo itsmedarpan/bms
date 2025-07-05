@@ -24,7 +24,7 @@
   <div class="flex justify-between items-center mb-8">
     <span class="text-gray-700">Want to check your previous requests?</span>
     <a
-      href="{% url 'request' %}"
+      href="{% url 'my_request' %}"
       class="bg-red-700 text-white px-4 py-2 rounded-md font-semibold hover:bg-red-800 transition text-sm flex items-center"
     >
       <svg
@@ -194,6 +194,18 @@
         class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-700"
         placeholder="Any additional information..."
       ></textarea>
+    </div>
+    <div>
+      <label for="deadline" class="block text-gray-700 font-semibold mb-2">
+        Deadline (Date until you can wait)
+      </label>
+      <input
+        type="date"
+        id="deadline"
+        name="deadline"
+        class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-red-700"
+        required
+      />
     </div>
     <button
       type="submit"

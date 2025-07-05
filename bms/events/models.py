@@ -47,6 +47,7 @@ class Request(models.Model):
     district = models.CharField(max_length=100)
     province = models.CharField(max_length=20, choices=PROVINCE_CHOICES)
     message = models.TextField(blank=True, null=True)
+    deadline = models.DateField()
     created_at = models.DateTimeField(auto_now_add=True)
 
 class Donate(models.Model):

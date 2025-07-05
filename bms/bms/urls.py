@@ -6,5 +6,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
     path('events/', include('events.urls')),
-    # path('backend/', include('backend.urls')),
+    path('backend/', include('backend.urls')),
 ]
