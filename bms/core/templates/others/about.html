@@ -1,41 +1,71 @@
-{% extends 'components/base.html' %} 
-{% load static %} 
-{% block title %}About 
-{% endblock %} 
-{% block extra_head %}{% endblock %} 
+{% extends 'components/base.html' %}
+{% load static %}
+{% block title %}About{% endblock %}
+{% block extra_head %}{% endblock %}
 {% block content %}
 
-<div class="max-w-3xl mx-auto flex flex-col md:flex-row">
-  <div class="w-full md:w-1/2 order-1 md:order-2">
+<div class="max-w-3xl mx-auto flex flex-col md:flex-row bg-white shadow-md rounded-lg p-6 mt-8">
+
+  <div class="w-full md:w-1/2 order-1 md:order-2 flex justify-center items-center mb-6 md:mb-0">
     <img
       src="{% static 'images/logo1.webp' %}"
       alt="BloodConnect Logo"
-      class="w-64 h-64 shadow-lg mx-auto md:ml-6"
+      class="w-48 h-48 md:w-64 md:h-64 shadow-lg rounded-md"
     />
   </div>
 
-  <div class="w-full md:w-1/2 order-2 md:order-1">
-    <div>
-      <h1 class="text-4xl text-red-700 font-bold pt-2">BloodConnect</h1>
-      <span>Nepal's largest Open-Source Blood Bank Management System</span>
-    </div>
+  <div class="w-full md:w-1/2 order-2 md:order-1 flex flex-col justify-center">
+    <h1 class="text-4xl font-extrabold text-red-700 mb-2 border-b-4 border-red-600 pb-2">
+      BloodConnect
+    </h1>
+    <span class="text-lg font-semibold text-red-600 mb-6 block">
+      Nepal's largest Open-Source Blood Bank Management System
+    </span>
 
-    <div class="mt-4">
-      <p>
-        BloodConnect is a community-driven platform designed to streamline blood
-        donation and management in Nepal. Our mission is to connect donors,
-        recipients, and healthcare providers to ensure that every drop of blood
-        counts.
-      </p>
+    <p class="text-gray-800 mb-4 leading-relaxed">
+      BloodConnect is a community-driven platform designed to streamline blood donation and management in Nepal. Our mission is to connect donors, recipients, and healthcare providers to ensure that every drop of blood counts.
+    </p>
 
-      <p class="mt-2">
-        We believe in the power of open-source technology to create a
-        transparent, efficient, and accessible blood management system for all.
-      </p>
-    </div>
+    <p class="text-gray-700 leading-relaxed">
+      We believe in the power of open-source technology to create a transparent, efficient, and accessible blood management system for all.
+    </p>
   </div>
+
 </div>
 
-{% endblock %} 
-{% block script %}
+<section class="max-w-3xl mx-auto mt-12 px-6">
+  <h2 class="text-3xl font-bold text-red-700 mb-4 border-b-2 border-red-600 inline-block">
+    Our Mission
+  </h2>
+  <p class="text-gray-800 leading-relaxed mt-2">
+    To build a reliable, transparent, and community-driven blood donation system that saves lives by connecting donors and recipients across Nepal.
+  </p>
+</section>
+
+<section class="max-w-3xl mx-auto mt-12 px-6">
+  <h2 class="text-3xl font-bold text-red-700 mb-6 border-b-2 border-red-600 inline-block">
+    How It Works
+  </h2>
+  <ol class="list-decimal list-inside text-gray-800 space-y-2">
+    <li>Register as a donor or recipient on our platform.</li>
+    <li>Search for available blood types in your area or post a blood request.</li>
+    <li>Connect directly with donors or blood banks.</li>
+    <li>Coordinate safe and timely blood donations.</li>
+  </ol>
+</section>
+
+<section class="max-w-3xl mx-auto mt-12 mb-12 px-6">
+  <h2 class="text-3xl font-bold text-red-700 mb-6 border-b-2 border-red-600 inline-block">
+    Get Involved
+  </h2>
+  <p class="text-gray-800 leading-relaxed mb-4">
+    Join us in making a difference. You can help by donating blood, volunteering, spreading awareness, or contributing to our open-source codebase on
+    <a href="https://github.com/your-repo" class="text-red-600 underline" target="_blank" rel="noopener noreferrer">GitHub</a>.
+  </p>
+  <a href="/register" class="inline-block bg-red-700 text-white px-6 py-2 rounded hover:bg-red-800 transition">
+    Register Now
+  </a>
+</section>
+
 {% endblock %}
+{% block script %}{% endblock %}
