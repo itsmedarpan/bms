@@ -57,3 +57,4 @@ class Donate(models.Model):
     blood_group = models.CharField(max_length=10)
     province = models.CharField(max_length=100)
     district = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True)

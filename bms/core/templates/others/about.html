@@ -1,0 +1,41 @@
+{% extends 'components/base.html' %} 
+{% load static %} 
+{% block title %}About 
+{% endblock %} 
+{% block extra_head %}{% endblock %} 
+{% block content %}
+
+<div class="max-w-3xl mx-auto flex flex-col md:flex-row">
+  <div class="w-full md:w-1/2 order-1 md:order-2">
+    <img
+      src="{% static 'images/logo1.webp' %}"
+      alt="BloodConnect Logo"
+      class="w-64 h-64 shadow-lg mx-auto md:ml-6"
+    />
+  </div>
+
+  <div class="w-full md:w-1/2 order-2 md:order-1">
+    <div>
+      <h1 class="text-4xl text-red-700 font-bold pt-2">BloodConnect</h1>
+      <span>Nepal's largest Open-Source Blood Bank Management System</span>
+    </div>
+
+    <div class="mt-4">
+      <p>
+        BloodConnect is a community-driven platform designed to streamline blood
+        donation and management in Nepal. Our mission is to connect donors,
+        recipients, and healthcare providers to ensure that every drop of blood
+        counts.
+      </p>
+
+      <p class="mt-2">
+        We believe in the power of open-source technology to create a
+        transparent, efficient, and accessible blood management system for all.
+      </p>
+    </div>
+  </div>
+</div>
+
+{% endblock %} 
+{% block script %}
+{% endblock %}
