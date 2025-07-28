@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from .forms import RequestForm, DonateForm
 
+
 def events(request):
     return render(request, 'events/list_event.html')
+
 
 def request(request):
     if request.method == 'POST':
@@ -13,6 +15,7 @@ def request(request):
     else:
         form = RequestForm()
     return render(request, 'events/request.html', {'form': form})
+
 
 def donate(request):
     if request.method == 'POST':

@@ -1,0 +1,50 @@
+{% extends 'components/base.html' %}
+{% block title %}Sign In{% endblock %}
+{% block content %}
+
+<div class="flex justify-center items-center bg-gray-100 min-h-screen ">
+    <form class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md space-y-6" method="POST" action="">
+        {% csrf_token %}
+        <h2 class="text-3xl font-bold text-center text-red-600">Sign Up</h2>
+
+        <div>
+            <label class="block text-gray-700 mb-1">Username</label>
+            <input type="text" placeholder="ilovepotatoes" name="username"
+                class="w-full px-4 py-2 border border-red-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none"
+                required />
+        </div>
+
+        <div>
+            <label class="block text-gray-700 mb-1">Email</label>
+            <input type="email" placeholder="you@example.com" name="email"
+                class="w-full px-4 py-2 border border-red-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none"
+                required />
+        </div>
+
+        <div>
+            <label class="block text-gray-700 mb-1">Password</label>
+            <input type="password" placeholder="Create password" name="password1"
+                class="w-full px-4 py-2 border border-red-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none"
+                required />
+        </div>
+
+        <div>
+            <label class="block text-gray-700 mb-1">Confirm Password</label>
+            <input type="password" placeholder="Verify Password" name="password2"
+                class="w-full px-4 py-2 border border-red-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none"
+                required />
+        </div>
+
+        <button type="submit"
+            class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 rounded-lg transition">
+            Create Account
+        </button>
+
+        <p class="text-center text-sm text-gray-600">
+            Already have an account?
+            <a href="{% url 'login' %}" class="text-red-600 hover:underline font-medium">Login</a>
+        </p>
+    </form>
+</div>
+
+{% endblock %}
